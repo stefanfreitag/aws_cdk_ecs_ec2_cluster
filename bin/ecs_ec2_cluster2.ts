@@ -1,7 +1,12 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import { EcsEc2Cluster2Stack } from '../lib/ecs_ec2_cluster2-stack';
-import { App } from '@aws-cdk/core';
+import "source-map-support/register";
+import { App } from "@aws-cdk/core";
+import { FargateDemo } from "../lib/ecs_fargate";
 
 const app = new App();
-new EcsEc2Cluster2Stack(app, 'EcsEc2Cluster2Stack');
+new FargateDemo(app, "FargateClusterStack", {
+  env: {
+    account: process.env.CDK_DEFAULT_ACCOUNT,
+    region: process.env.CDK_DEFAULT_REGION,
+  },
+});
