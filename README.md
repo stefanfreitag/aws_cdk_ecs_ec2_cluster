@@ -9,7 +9,20 @@ The container image used is available at [Docker Hub](https://hub.docker.com/).
 
 ## ECS setup using Cloud Development Kit (CDK)
 
-The ECS cluster will run in the default [VPC](https://aws.amazon.com/vpc/) of the region. 
+The ECS cluster will run in the default [VPC](https://aws.amazon.com/vpc/) of the region. To keep the management overhead low it will be powered by Fargate.
+
+A service and a task definition are created:
+
+- The task definition contains the information about the container (e.g. port mappings)
+- The service defines e.g. the desired count of running tasks.
+
+After the cluster has been deployed via
+
+```sh
+cdk deploy
+```
+
+the DNS name of the load balancer is returned/ printed to the console.
 
 ## Troubleshooting
 
@@ -21,3 +34,5 @@ The ECS cluster will run in the default [VPC](https://aws.amazon.com/vpc/) of th
 
 - [Flask Hello World](https://hub.docker.com/r/stefanfreitag/flask-hello-world)
 - [AWS Cloud Development Kit](https://github.com/aws/aws-cdk)
+- [AWS Fargate](https://aws.amazon.com/fargate/)
+- [Task cannot pull image](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_cannot_pull_image.html)

@@ -32,7 +32,7 @@ export class FargateDemo extends Stack {
     const svc = new FargateService(this, "svc-flask-hello-world", {
       cluster,
       taskDefinition,
-      desiredCount: 1,
+      desiredCount: 2,
       //TODO: Remove usage of public ip
       assignPublicIp: true,
     });
@@ -74,7 +74,7 @@ export class FargateDemo extends Stack {
       "container-flask-hello-world",
       {
         image: ContainerImage.fromRegistry(
-          "stefanfreitag/flask-hello-world:0.0.1"
+          "stefanfreitag/flask-hello-world:0.0.2"
         ),
         essential: true,
         memoryLimitMiB: 1024,
