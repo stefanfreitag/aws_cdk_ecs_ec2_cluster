@@ -4,16 +4,30 @@
   "bin": {
     "ecs_ec2_cluster2": "bin/ecs_ec2_cluster2.js"
   },
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Stefan Freitag",
+    "email": "stefan@stefreitag.de"
+  },
+  "repository": {
+    "url": "git://github.com/stefanfreitag/aws_cdk_ecs_ec2_cluster.git",
+    "type": "git"
+  },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "test": "jest"
   },
   "devDependencies": {
+    "@aws-cdk/assert": "^1.67.0",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@types/jest": "^26.0.14",
     "@types/node": "14.11.8",
     "aws-cdk": "1.67.0",
+    "jest": "^26.5.3",
+    "ts-jest": "^26.4.1",
     "ts-node": "9.0.0",
     "typescript": "4.0.3"
   },
