@@ -14,12 +14,13 @@ export class FargateDemo extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    //Get default VPC for region
-    const vpc = Vpc.fromLookup(this, "DefaultVpC", {
-      isDefault: true,
-    });
+    //Create a dedicated VPC for the cluster
+    const vpc = new Vpc(this, "vpc",{
+     cidr: '10.1.0.0/16',
+     maxAzs: 3
+   })
 
-    //Create cluster in default VPC
+    //Create cluster in the VPC
     const cluster = new Cluster(this, "EcsCluster", {
       vpc,
       clusterName: "DemoEcsCluster",
