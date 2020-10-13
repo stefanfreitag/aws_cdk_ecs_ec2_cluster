@@ -9,7 +9,7 @@ The container image used is available at [Docker Hub](https://hub.docker.com/).
 
 ## ECS setup using Cloud Development Kit (CDK)
 
-The ECS cluster will run in the default [VPC](https://aws.amazon.com/vpc/) of the region. To keep the management overhead low it will be powered by Fargate.
+The ECS cluster will run in a new [VPC](https://aws.amazon.com/vpc/) with CIDR 10.1.0.0/16. To keep the management overhead low it will be powered by Fargate.
 
 A service and a task definition are created:
 
