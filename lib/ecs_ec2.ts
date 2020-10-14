@@ -50,12 +50,12 @@ export class Ec2Demo extends Demo {
       loadBalancerName: "lb-svc-flask-hello-world",
     });
 
-    const listener = lb.addListener("Public Listener", {
+    const listener = lb.addListener("PublicListener", {
       port: 80,
       open: true,
     });
 
-    listener.addTargets("ECS1", {
+    listener.addTargets("ecsTarget", {
       port: 80,
       targets: [svc],
     });

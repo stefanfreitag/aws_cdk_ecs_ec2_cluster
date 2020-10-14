@@ -34,7 +34,7 @@ export class FargateDemo extends Demo {
       taskDefinition,
       desiredCount: 2,
       //TODO: Remove usage of public ip
-      assignPublicIp: true,      
+      assignPublicIp: true,
     });
 
     const lb = new ApplicationLoadBalancer(this, "Loadbalancer", {
@@ -48,7 +48,7 @@ export class FargateDemo extends Demo {
       open: true,
     });
 
-    listener.addTargets("tg-group-fargate", {
+    listener.addTargets("ecsTarget", {
       port: 80,
       targets: [svc],
     });
@@ -58,7 +58,4 @@ export class FargateDemo extends Demo {
       value: lb.loadBalancerDnsName,
     });
   }
-
-  
-
 }

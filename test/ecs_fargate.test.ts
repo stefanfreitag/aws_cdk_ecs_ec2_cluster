@@ -32,7 +32,9 @@ test("Stack contains ECS cluster ", () => {
     },
   });
 
-  expectCDK(stack).to(haveResource("AWS::ECS::Cluster", {}));
+  expectCDK(stack).to(haveResourceLike("AWS::ECS::Cluster", {
+    ClusterName: "DemoEcsCluster"
+  }));
 });
 
 test("Stack contains Task Definition ", () => {
@@ -50,6 +52,7 @@ test("Stack contains Task Definition ", () => {
       ContainerDefinitions: [
         {
           Essential: true,
+          Image: "stefanfreitag/flask-hello-world:0.0.2",
           LogConfiguration: {
             LogDriver: "awslogs",
             Options: {
