@@ -1,8 +1,8 @@
 {
-  "name": "ecs_ec2_cluster2",
+  "name": "ecs_demo",
   "version": "0.1.0",
   "bin": {
-    "ecs_ec2_cluster2": "bin/ecs_ec2_cluster2.js"
+    "ecs_demo": "bin/ecs_demo.js"
   },
   "license": "Apache-2.0",
   "author": {

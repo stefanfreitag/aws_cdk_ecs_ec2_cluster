@@ -4,11 +4,11 @@ import {
   haveResourceLike,
 } from "@aws-cdk/assert";
 import { App } from "@aws-cdk/core";
-import { FargateDemo } from "../lib/ecs_fargate";
+import { Ec2Demo } from "../lib/ecs_ec2";
 
 test("Stack contains a VPC ", () => {
   const app = new App();
-  const stack = new FargateDemo(app, "id", {
+  const stack = new Ec2Demo(app, "id", {
     env: {
       account: process.env.CDK_DEFAULT_ACCOUNT,
       region: process.env.CDK_DEFAULT_REGION,
@@ -25,7 +25,7 @@ test("Stack contains a VPC ", () => {
 test("Stack contains ECS cluster ", () => {
   const app = new App();
 
-  const stack = new FargateDemo(app, "id", {
+  const stack = new Ec2Demo(app, "id", {
     env: {
       account: process.env.CDK_DEFAULT_ACCOUNT,
       region: process.env.CDK_DEFAULT_REGION,
@@ -38,7 +38,7 @@ test("Stack contains ECS cluster ", () => {
 test("Stack contains Task Definition ", () => {
   const app = new App();
 
-  const stack = new FargateDemo(app, "id", {
+  const stack = new Ec2Demo(app, "id", {
     env: {
       account: process.env.CDK_DEFAULT_ACCOUNT,
       region: process.env.CDK_DEFAULT_REGION,
